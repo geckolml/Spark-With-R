@@ -6,6 +6,7 @@ Sys.setenv(PATH = paste(Sys.getenv(c('PATH')), '/root/spark/bin', sep=':'))
 
 library(SparkR)
 library(magrittr) # Pipes
+library(dplyr)
 # initialize the Spark Context
 sc <- sparkR.init()
 sqlContext <- sparkRSQL.init(sc)
@@ -16,6 +17,8 @@ bank <- read.csv("/home/renzo/bank.csv",sep = ";") %>%
 # create a data frame using the createDataFrame object
 df <- createDataFrame(sqlContext, bank) 
 head(df)
+str(df)
+glimpse(df)
 
 # bancos <- df %>% 
 # collect()
