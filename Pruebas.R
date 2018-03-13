@@ -16,7 +16,7 @@ track_metadata_tbl <- tbl(spark_conn, "Data")
 # See how big the dataset is
 object_size("Data")
 
-# See how small the tibble is
+# See how small the tibble is 
 dim(track_metadata_tbl)
 
 # Print 5 rows, all columns
@@ -26,5 +26,5 @@ print(track_metadata_tbl,n=5)
 str(track_metadata_tbl)
 
 # Examine structure of data
-glimpse(track_metadata_tbl)
+glimpse(track_metadata_tbl) 
 
