@@ -14,7 +14,9 @@ sqlContext <- sparkRSQL.init(sc)
 bank <- read.csv("/home/renzo/bank.csv",sep = ";") %>% 
   data.frame()
 
-bank2 <- read.csv("https://s3-us-west-2.amazonaws.com/bank.uci/bank-full.csv") # read S3 file
+bank2 <- read.csv("https://s3-us-west-2.amazonaws.com/bank.uci/bank-full.csv", 
+                  sep = ";") %>% # read S3 file
+  data.frame()
 # create a data frame using the createDataFrame object
 df <- createDataFrame(sqlContext, bank) 
 head(df)
